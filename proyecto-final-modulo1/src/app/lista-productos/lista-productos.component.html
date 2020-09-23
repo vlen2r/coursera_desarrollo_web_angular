@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card mb-3">
+            <div class="card-header">
+                <h3 class="mb-0 text-center">Añadir Producto</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="Nombre">Nombre</label>
+                        <input type="text" class="form-control" id="Nombre" placeholder="Ingrese nombre" #Nombre>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="CodigoReferencia">Codigo Referencia</label>
+                                <input type="tel" class="form-control" id="CodigoReferencia" placeholder="Ingrese codigo de referencia" #CodigoReferencia>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Categoria">Categoria</label>
+                                <select class="form-control" id="Categoria" #Categoria>
+                                  <option>Almacenable</option>
+                                  <option>Consumible</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="TipoMoneda">Moneda</label>
+                                <select class="form-control" id="TipoMoneda" #TipoMoneda>
+                                  <option>AR$</option>
+                                  <option>U$S</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="Precio">Precio</label>
+                                <input type="number" class="form-control" id="Precio" placeholder="Ingrese un precio" #Precio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Descripcion">Descripcion</label>
+                        <textarea class="form-control" id="Descripcion" rows="3" placeholder="Ingrese una breve descripcion" #Descripcion></textarea>
+                    </div>
+                    <button type="submit" class="btn-card" (click)="guardar(Nombre.value,CodigoReferencia.value,Categoria.value,Precio.value,TipoMoneda.value,Descripcion.value)">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<h1>Listado de Productos</h1>
+<hr>
+<ul>
+    <app-producto *ngFor="let d of lista_productos" [producto]="d"></app-producto>
+</ul>
