@@ -9,7 +9,7 @@ import { DestinoViaje } from '../models/destino-viaje.model';
 export class ListaDestinoComponent implements OnInit {
   destinos: DestinoViaje[];
   constructor() {
-    this.destinos=[]
+    this.destinos=[];
   }
 
   ngOnInit(): void {
