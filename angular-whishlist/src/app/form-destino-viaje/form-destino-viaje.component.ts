@@ -46,8 +46,8 @@ export class FormDestinoViajeComponent implements OnInit {
     fromEvent(elemNombre, 'input')
       .pipe(
         map((e: KeyboardEvent)=>(e.target as HTMLInputElement).value),
-        filter(text => text.length > 2),
-        debounceTime(120),
+        filter(text => text.length >= 4),
+        debounceTime(200),
         distinctUntilChanged(),
         switchMap(() => ajax('/assets/datos.json'))
       ).subscribe(AjaxResponse => {
