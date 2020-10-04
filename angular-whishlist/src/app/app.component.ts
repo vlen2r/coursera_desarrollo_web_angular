@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-whishlist';
+  time=new Observable(observer => {
+    setInterval(()=>observer.next(new Date().toString()), 1000);
+    return null;
+  })
 
   destinoAgregado(d) {
   	//alert(d.nombre);
